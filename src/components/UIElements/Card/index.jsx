@@ -12,6 +12,7 @@ import { useState } from 'react';
 
 function Card() {
   const [isAdmin, setIsAdmin] = useState(false);
+  const [count, setCount] = useState(0);
 
   return (
     <Styled.Container>
@@ -28,9 +29,9 @@ function Card() {
       {!isAdmin &&
       <>
         <Styled.DivQuantity>
-          <button><Styled.Icons src={minus} /></button>
-          <p>01</p>
-          <button><Styled.Icons src={plus} /></button>
+          <button onClick={() => setCount(count - 1)}><Styled.Icons src={minus} /></button>
+          <p>{count}</p>
+          <button onClick={() => setCount(count + 1)}><Styled.Icons src={plus} /></button>
         </Styled.DivQuantity>
         <Button
           title='incluir'
