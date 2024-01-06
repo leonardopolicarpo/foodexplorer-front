@@ -1,9 +1,9 @@
 import * as Styled from './styles';
 
-const Input = ({ title, ...rest }) => {
+const Input = ({ id, title , ...rest }) => {
   return (
     <Styled.Container>
-      <Styled.Label>{title}</Styled.Label>
+      <Styled.Label htmlFor={id}>{title}</Styled.Label>
       <Styled.Input {...rest}/>
     </Styled.Container>
   )
